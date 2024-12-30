@@ -32,140 +32,144 @@
         <div class="tenant-info">
           <h3>Name: Tenant 01</h3>
           <p>Property: Room 1B</p>
-          <p>3:58 PM Tue, Dec 24, 2024</p>
+          <p id="current-time"></p> <!-- Current time will be updated here -->
         </div>
 
         <form class="invoice-form">
           <div>
             <label for="month-1">Select Month</label>
-            <select id="month-1">
-              <option value="october">October 2024</option>
-            </select>
+            <select id="month-1"></select>
+          </div>
+          <div class="form-group">
+            <div class="form-item">
+              <label for="Tenant-name-1">Tenant Name</label>
+              <input type="text" id="Tenant-name-1" placeholder="Enter tenant name">
+            </div>
+            <div class="form-item">
+              <label for="tenant-quantity">Tenant Quantity</label>
+              <select id="tenant-quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
           </div>
           <div>
-            <label for="tenant-quantity">Tenant Quantity</label>
-            <select id="tenant-quantity">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </div>          
-          <div>
-            <label for="Tenant-name-1">Tenant Name</label>
-            <input type="text" id="current-price-1" placeholder="Enter tenant name">
-          </div>
-          <div>
-            <label for="current-price-1">Current Price</label>
+            <label for="current-price-1">Current Price$</label>
             <input type="text" id="current-price-1" placeholder="Enter current price">
           </div>
           <div>
-            <label for="internet-fee-1">Internet Fee</label>
+            <label for="internet-fee-1">Internet Fee $</label>
             <input type="text" id="internet-fee-1" placeholder="Enter internet fee">
           </div>
           <div>
-            <label for="electric-new-1">New Electric</label>
+            <label for="electric-new-1">New Electric (kw)</label>
             <input type="text" id="electric-new-1" placeholder="Enter new electric">
           </div>
+
+          <!-- Calculate Button -->
           <div>
-            <label>Previous Electric: 2334 (kw)</label>
-            <span>Room: 40.00$</span>
-            <label>Electric: 11.63$</label>
-            <label>Internet: 0.00$</label>
-            <label>Water: 3.00$</label>
+            <button type="button" id="calculate-btn">Calculate</button>
           </div>
-          <div class="form-actions">
-            <button type="button">Total $</button>
-            <button type="button">Total Riel</button>
+
+          <div class="info-container">
+            <!-- Left Content -->
+            <div class="info-section left-section">
+              <p><strong>Previous Electric:</strong> 2334 (kw)</p>
+              <p><strong>Room:</strong> 0.00$</p>
+              <p><strong>Electric:</strong> 0.00$</p>
+              <p><strong>Internet:</strong> 0.00$</p>
+              <p><strong>Water:</strong> 0.00$</p>
+              <div class="total-section">
+                <p><strong>Total:</strong> 0.00$</p>
+              </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="info-section right-section">
+              <p><strong>Electric 1kw:</strong> 0.375$</p>
+              <p><strong>Water 1 person:</strong> 1.5$</p>
+              <p><strong>1$:</strong> 4000 Riel</p>
+            </div>
           </div>
         </form>
+        <div class="form-actions">
+          <button type="button">Total $</button>
+          <button type="button">Total Riel</button>
+        </div>
       </section>
 
+      <!-- Other Tenant Sections -->
       <section id="tenant-2" class="tenant-details">
         <div class="tenant-info">
           <h3>Name: Tenant 02</h3>
           <p>Property: Room 2A</p>
-          <p>3:58 PM Tue, Dec 24, 2024</p>
+          <p id="current-time"></p>
         </div>
-
-        <form class="invoice-form">
-          <div>
-            <label for="month-2">Select Month</label>
-            <select id="month-2">
-              <option value="october">October 2024</option>
-            </select>
-          </div>
-          <div>
-            <label for="Tenant-name-1">Tenant Name</label>
-            <input type="text" id="current-price-1" placeholder="Enter tenant name">
-          </div>
-          <div>
-            <label for="current-price-2">Current Price</label>
-            <input type="text" id="current-price-2" placeholder="Enter current price">
-          </div>
-          <div>
-            <label for="internet-fee-2">Internet Fee</label>
-            <input type="text" id="internet-fee-2" placeholder="Enter internet fee">
-          </div>
-          <div>
-            <label for="electric-new-2">New Electric</label>
-            <input type="text" id="electric-new-2" placeholder="Enter new electric">
-          </div>
-          <div>
-            <label>Previous Electric:</label>
-            <span>7$ / 14Kw</span>
-          </div>
-          <div class="form-actions">
-            <button type="button">Total $</button>
-            <button type="button">Total Riel</button>
-          </div>
-        </form>
       </section>
 
       <section id="tenant-3" class="tenant-details">
         <div class="tenant-info">
           <h3>Name: Tenant 03</h3>
           <p>Property: Room 3C</p>
-          <p>3:58 PM Tue, Dec 24, 2024</p>
+          <p id="current-time"></p>
         </div>
-
-        <form class="invoice-form">
-          <div>
-            <label for="month-3">Select Month</label>
-            <select id="month-3">
-              <option value="october">October 2024</option>
-            </select>
-          </div>
-          <div>
-            <label for="Tenant-name-1">Tenant Name</label>
-            <input type="text" id="current-price-1" placeholder="Enter tenant name">
-          </div>
-          <div>
-            <label for="current-price-3">Current Price</label>
-            <input type="text" id="current-price-3" placeholder="Enter current price">
-          </div>
-          <div>
-            <label for="internet-fee-3">Internet Fee</label>
-            <input type="text" id="internet-fee-3" placeholder="Enter internet fee">
-          </div>
-          <div>
-            <label for="electric-new-3">New Electric</label>
-            <input type="text" id="electric-new-3" placeholder="Enter new electric">
-          </div>
-          <div>
-            <label>Previous Electric:</label>
-            <span>7$ / 14Kw</span>
-          </div>
-          <div class="form-actions">
-            <button type="button">Total $</button>
-            <button type="button">Total Riel</button>
-          </div>
-        </form>
       </section>
     </main>
+    
   </div>
 
-  <!-- Link to the JavaScript file -->
-  <script src="js/script.js"></script>
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Update current time
+      const updateTime = () => {
+        const now = new Date();
+        const options = { weekday: "short", hour: "2-digit", minute: "2-digit", year: "numeric", month: "short", day: "numeric" };
+        const currentTime = now.toLocaleString("en-US", options);
+        document.querySelectorAll("#current-time").forEach((el) => (el.textContent = currentTime));
+      };
+      updateTime();
+
+      // Populate Select Month with 3 months before and after current month
+      const populateMonths = () => {
+        const monthSelectors = document.querySelectorAll("[id^='month-']");
+        monthSelectors.forEach((select) => {
+          select.innerHTML = "";
+          const now = new Date();
+          for (let i = -3; i <= 3; i++) {
+            const date = new Date(now.getFullYear(), now.getMonth() + i, 1);
+            const option = document.createElement("option");
+            option.value = `${date.getMonth() + 1}-${date.getFullYear()}`;
+            option.textContent = date.toLocaleString("en-US", { month: "long", year: "numeric" });
+            select.appendChild(option);
+          }
+        });
+      };
+      populateMonths();
+
+      // Calculate the totals when Calculate button is clicked
+      document.getElementById("calculate-btn").addEventListener("click", () => {
+        const form = document.querySelector(".invoice-form");
+        const currentPrice = parseFloat(document.getElementById("current-price-1").value) || 0;
+        const internetFee = parseFloat(document.getElementById("internet-fee-1").value) || 0;
+        const newElectric = parseFloat(document.getElementById("electric-new-1").value) || 0;
+        const previousElectric = 2334; // Hardcoded
+        const tenantQuantity = parseInt(document.getElementById("tenant-quantity").value) || 1;
+
+        const electricCost = Math.max(0.375 * (newElectric - previousElectric), 0);
+        const waterCost = tenantQuantity * 1.5;
+        const total = currentPrice + internetFee + electricCost + waterCost;
+
+        // Update the display
+        form.querySelector(".left-section p:nth-child(2)").textContent = `Room: ${currentPrice.toFixed(2)}$`;
+        form.querySelector(".left-section p:nth-child(3)").textContent = `Electric: ${electricCost.toFixed(2)}$`;
+        form.querySelector(".left-section p:nth-child(4)").textContent = `Internet: ${internetFee.toFixed(2)}$`;
+        form.querySelector(".left-section p:nth-child(5)").textContent = `Water: ${waterCost.toFixed(2)}$`;
+        form.querySelector(".total-section p").textContent = `Total: ${total.toFixed(2)}$`;
+      });
+    });
+  </script>
 </body>
 </html>

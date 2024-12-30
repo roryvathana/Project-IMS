@@ -446,3 +446,72 @@ body {
   max-width: 100%;
   height: auto;
 }
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between the fields */
+}
+
+.form-item {
+  flex: 1; /* Ensures equal width for both fields */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+/* Container Styling */
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid purple;
+  border-radius: 10px;
+  background-color: #fff;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styling */
+.info-section {
+  flex: 1;
+  font-family: Arial, sans-serif;
+}
+
+.left-section {
+  text-align: left;
+}
+
+.right-section {
+  text-align: right;
+}
+
+/* Text Styling */
+.info-section p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.info-section p strong {
+  font-weight: bold;
+  color: #333;
+}
+.total-container p strong {
+  font-weight: bold;
+  color: red;
+}
+
