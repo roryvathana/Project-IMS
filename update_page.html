@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMS Tenant Invoice</title>
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="img/IMS_logo_1.png" alt="IMS Logo">
+      </div>
+      <nav class="tabs">
+        <button class="tab active" onclick="showTab('tenant-1', event)">Tenant 01</button>
+        <button class="tab" onclick="showTab('tenant-2', event)">Tenant 02</button>
+        <button class="tab" onclick="showTab('tenant-3', event)">Tenant 03</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <h1>INVOICE</h1>
+      </header>
+
+      <!-- Tenant Sections -->
+      <section id="tenant-1" class="tenant-details active">
+        <div class="tenant-info">
+          <h3>Name: Tenant 01</h3>
+          <p>Property: Room 1B</p>
+          <p>3:58 PM Tue, Dec 24, 2024</p>
+        </div>
+
+        <form class="invoice-form">
+          <div>
+            <label for="month-1">Select Month</label>
+            <select id="month-1">
+              <option value="october">October 2024</option>
+            </select>
+          </div>
+          <div>
+            <label for="tenant-quantity">Tenant Quantity</label>
+            <select id="tenant-quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>          
+          <div>
+            <label for="Tenant-name-1">Tenant Name</label>
+            <input type="text" id="current-price-1" placeholder="Enter tenant name">
+          </div>
+          <div>
+            <label for="current-price-1">Current Price</label>
+            <input type="text" id="current-price-1" placeholder="Enter current price">
+          </div>
+          <div>
+            <label for="internet-fee-1">Internet Fee</label>
+            <input type="text" id="internet-fee-1" placeholder="Enter internet fee">
+          </div>
+          <div>
+            <label for="electric-new-1">New Electric</label>
+            <input type="text" id="electric-new-1" placeholder="Enter new electric">
+          </div>
+          <div>
+            <label>Previous Electric: 2334 (kw)</label>
+            <span>Room: 40.00$</span>
+            <label>Electric: 11.63$</label>
+            <label>Internet: 0.00$</label>
+            <label>Water: 3.00$</label>
+          </div>
+          <div class="form-actions">
+            <button type="button">Total $</button>
+            <button type="button">Total Riel</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="tenant-2" class="tenant-details">
+        <div class="tenant-info">
+          <h3>Name: Tenant 02</h3>
+          <p>Property: Room 2A</p>
+          <p>3:58 PM Tue, Dec 24, 2024</p>
+        </div>
+
+        <form class="invoice-form">
+          <div>
+            <label for="month-2">Select Month</label>
+            <select id="month-2">
+              <option value="october">October 2024</option>
+            </select>
+          </div>
+          <div>
+            <label for="Tenant-name-1">Tenant Name</label>
+            <input type="text" id="current-price-1" placeholder="Enter tenant name">
+          </div>
+          <div>
+            <label for="current-price-2">Current Price</label>
+            <input type="text" id="current-price-2" placeholder="Enter current price">
+          </div>
+          <div>
+            <label for="internet-fee-2">Internet Fee</label>
+            <input type="text" id="internet-fee-2" placeholder="Enter internet fee">
+          </div>
+          <div>
+            <label for="electric-new-2">New Electric</label>
+            <input type="text" id="electric-new-2" placeholder="Enter new electric">
+          </div>
+          <div>
+            <label>Previous Electric:</label>
+            <span>7$ / 14Kw</span>
+          </div>
+          <div class="form-actions">
+            <button type="button">Total $</button>
+            <button type="button">Total Riel</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="tenant-3" class="tenant-details">
+        <div class="tenant-info">
+          <h3>Name: Tenant 03</h3>
+          <p>Property: Room 3C</p>
+          <p>3:58 PM Tue, Dec 24, 2024</p>
+        </div>
+
+        <form class="invoice-form">
+          <div>
+            <label for="month-3">Select Month</label>
+            <select id="month-3">
+              <option value="october">October 2024</option>
+            </select>
+          </div>
+          <div>
+            <label for="Tenant-name-1">Tenant Name</label>
+            <input type="text" id="current-price-1" placeholder="Enter tenant name">
+          </div>
+          <div>
+            <label for="current-price-3">Current Price</label>
+            <input type="text" id="current-price-3" placeholder="Enter current price">
+          </div>
+          <div>
+            <label for="internet-fee-3">Internet Fee</label>
+            <input type="text" id="internet-fee-3" placeholder="Enter internet fee">
+          </div>
+          <div>
+            <label for="electric-new-3">New Electric</label>
+            <input type="text" id="electric-new-3" placeholder="Enter new electric">
+          </div>
+          <div>
+            <label>Previous Electric:</label>
+            <span>7$ / 14Kw</span>
+          </div>
+          <div class="form-actions">
+            <button type="button">Total $</button>
+            <button type="button">Total Riel</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- Link to the JavaScript file -->
+  <script src="js/script.js"></script>
+</body>
+</html>

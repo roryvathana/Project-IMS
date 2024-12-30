@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caesar Cipher</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Caesar Cipher</h1>
+    <ul class="nav nav-tabs" id="cipherTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="encrypt-tab" data-bs-toggle="tab" data-bs-target="#encrypt" type="button" role="tab">Generate IP GEO</button>
+      </li>
+    </ul>
+    <div class="tab-content mt-3">
+      <!-- Encrypt Section -->
+      <div class="tab-pane fade show active" id="encrypt" role="tabpanel">
+        <form>
+          <div class="mb-3">
+            <label for="plainText" class="form-label">Plain Text:</label>
+            <input type="text" id="plainText" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">IP:</label>
+            <div id="cipherTextEncrypt" class="alert alert-danger"><span></span></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">City:</label>
+            <div id="cipherTextEncrypt" class="alert alert-danger"><span></span></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Latitude:</label>
+            <div id="cipherTextEncrypt" class="alert alert-danger"><span></span></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Longtitude:</label>
+            <div id="cipherTextEncrypt" class="alert alert-danger"><span></span></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Timezone:</label>
+            <div id="cipherTextEncrypt" class="alert alert-danger"><span></span></div>
+          </div>
+          <button type="button" class="btn btn-danger" id="encrypt-btn">Generate</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    const btencry = document.querySelector("#encrypt-btn");
+    const btdencry = document.querySelector("#decrypt-btn");
+    const shiftEncrypt = document.querySelector("#shiftEncrypt");
+    const shiftDecrypt = document.querySelector("#shiftDecrypt");
+
+    // Define the alphabet for encryption and decryption
+    const listLetter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+    // Encryption function
+    function encrypt() {
+      const textarea = document.querySelector("#plainText");
+      const keyShift = Number(shiftEncrypt.value);
+      let newText = "";
+
+      for (const letter of textarea.value) {
+        if (!listLetter.includes(letter.toUpperCase())) {
+          newText += letter;
+          continue;
+        }
+
+        const indexLetter = listLetter.findIndex(item => item === letter.toUpperCase());
+        let indexNewLetter = (indexLetter + keyShift) % 26;
+        if (indexNewLetter < 0) indexNewLetter += 26;
+
+        newText += letter === letter.toUpperCase() ? listLetter[indexNewLetter] : listLetter[indexNewLetter].toLowerCase();
+      }
+
+      document.querySelector("#cipherTextEncrypt span").textContent = newText;
+    }
+
+    // Decryption function
+    function decrypt() {
+      const textarea = document.querySelector("#cipherText");
+      const keyShift = Number(shiftDecrypt.value);
+      let newText = "";
+
+
+      for (const letter of textarea.value) {
+        if (!listLetter.includes(letter.toUpperCase())) {
+          newText += letter;
+          continue;
+        }
+
+        const indexLetter = listLetter.findIndex(item => item === letter.toUpperCase());
+        let indexNewLetter = (indexLetter - keyShift) % 26;
+        if (indexNewLetter < 0) indexNewLetter += 26;
+
+        newText += letter === letter.toUpperCase() ? listLetter[indexNewLetter] : listLetter[indexNewLetter].toLowerCase();
+      }
+
+      document.querySelector("#plainTextDecrypt span").textContent = newText;
+    }
+    // Add event listeners
+    btencry.addEventListener("click", encrypt);
+    btdencry.addEventListener("click", decrypt);
+  </script>
+</body>
+</html>

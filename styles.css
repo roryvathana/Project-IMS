@@ -1,0 +1,448 @@
+/*hi Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Reusable Box Styles */
+  .container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 320px;
+    max-width: 90%;
+    box-sizing: border-box;
+    border: 2px solid purple;
+  }
+  
+  /* Logo */
+  .logo {
+    max-width: 60px;
+    margin-bottom: 20px;
+  }
+  
+  /* Headings */
+  h1 {
+    font-size: 24px;
+    color: #333333;
+    margin: 0;
+  }
+  
+  h2 {
+    font-size: 20px;
+    color: #555555;
+    margin: 10px 0 20px;
+  }
+  
+  /* Input Fields */
+  .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    font-size: 14px;
+    color: #666666;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  /* Buttons */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3f8efc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #3476d2;
+  }
+  
+  /* Dashboard Container */
+  .dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    border: 2px solid purple;
+    border-radius: 10px;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Dashboard Header */
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-bottom: 2px solid purple;
+  }
+  
+  .dashboard-header .logo img {
+    height: 40px;
+  }
+  
+  .dashboard-header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .dashboard-header .user-info .avatar {
+    width: 40px; /* Fixed circular avatar size */
+    height: 40px;
+    border-radius: 50%; /* Ensures the avatar is perfectly circular */
+    overflow: hidden; /* Prevents overflow of the image */
+    border: 2px solid #ddd; /* Subtle border around the avatar */
+    display: flex; /* Flexbox for centering */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+  }
+  
+  /* Dashboard Main Content */
+  .dashboard-main {
+    padding: 20px;
+  }
+  
+  .dashboard-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    background-color: #d1e7f3;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Tenant Card */
+.tenant-card {
+    display: flex;
+    flex-direction: column; /* Stacks avatar and text vertically */
+    align-items: center; /* Centers avatar and text */
+    gap: 10px; /* Space between avatar and text */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+    text-align: center; /* Centers text below avatar */
+  }
+  
+  /* Tenant Avatar */
+  .tenant-card .avatar {
+    width: 60px; /* Fixed size for the avatar */
+    height: 60px;
+    border-radius: 50%; /* Makes the avatar circular */
+    overflow: hidden; /* Prevents overflow of the image */
+    border: 2px solid #ddd; /* Adds a subtle border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+  }
+  
+  .tenant-card .avatar img {
+    width: 100%; /* Ensures the image fills the container */
+    height: 100%; /* Ensures the image fills the container */
+    object-fit: cover; /* Keeps the image proportional while filling the circle */
+    object-position: top center; /* Centers the image inside the circle */
+  }
+  
+  /* Tenant Info Styling */
+  .tenant-info {
+    text-align: center; /* Center-align text */
+  }
+  
+  .tenant-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .tenant-info p {
+    margin: 3px 0;
+    color: #555;
+  }
+  
+  .tenant-info p strong {
+    display: block;
+    font-size: 14px;
+  }  
+  
+  /* Tenant Actions */
+  .tenant-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  button.update-btn {
+    background-color: #ffc107;
+  }
+  
+  button.invoice-btn {
+    background-color: #3f8efc;
+  }
+  
+  button.history-btn {
+    background-color: #6c757d;
+  }
+  
+  button.update-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  button.invoice-btn:hover {
+    background-color: #346cd2;
+  }
+  
+  button.history-btn:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Avatar Styling */
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ddd; /* Subtle border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    display: flex; /* Ensures proper centering */
+    align-items: center;
+    justify-content: center; /* Centers image within the container */
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fits inside the circle */
+    object-position: top; /* Focuses on the top part of the image */
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .tenant-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .tenant-actions {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  /* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  border-right: 2px solid purple;
+  height: 100vh;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .logo {
+  margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+  max-width: 80px;
+  height: auto;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tab {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab.active {
+  background-color: #3f8efc;
+  color: white;
+}
+
+.tab:hover {
+  background-color: #d1d1d1;
+}
+
+/* Main Content */
+.dashboard-container {
+  display: flex;
+}
+
+.dashboard-main {
+  margin-left: 200px;
+  padding: 20px;
+  width: calc(100% - 200px);
+}
+
+/* Tenant Details */
+.tenant-details {
+  display: none;
+}
+
+.tenant-details.active {
+  display: block;
+}
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  border-right: 2px solid purple;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+  width: 100px;
+  height: auto;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #e0e0e0;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tab.active {
+  background-color: #3f8efc;
+  color: white;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 20px;
+}
+
+.dashboard-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.tenant-details {
+  display: none;
+}
+
+.tenant-details.active {
+  display: block;
+}
+
+.invoice-form {
+  margin-top: 20px;
+}
+
+.invoice-form div {
+  margin-bottom: 15px;
+}
+
+.invoice-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.invoice-form input,
+.invoice-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.form-actions button {
+  padding: 10px;
+  border: none;
+  background-color: #3f8efc;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.form-actions button:hover {
+  background-color: #346cd2;
+}
+
+.chart {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.chart img {
+  max-width: 100%;
+  height: auto;
+}

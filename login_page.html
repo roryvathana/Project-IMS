@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Management System Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <img src="img/IMS_logo_1.png" alt="IMS Logo" class="logo">
+      <h1>Welcome to</h1>
+      <h2>Invoice Management System</h2>
+      <p>Please Login to your account.</p>
+      <form onsubmit="return validateLogin()">
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="login-button">Login</button>
+      </form>
+      <p id="message" style="color: red; font-size: 14px; margin-top: 10px;"></p>
+    </div>
+  </div>
+</body>
+</html>
