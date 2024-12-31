@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMS Tenant Invoice</title>
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="img/IMS_logo_1.png" alt="IMS Logo">
+      </div>
+      <nav class="tabs">
+        <button class="tab active" onclick="showTab('tenant-1', event)">Tenant 01</button>
+        <button class="tab" onclick="showTab('tenant-2', event)">Tenant 02</button>
+        <button class="tab" onclick="showTab('tenant-3', event)">Tenant 03</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <h1><a href='dashboard.html' style='text-decoration: none; color: inherit;'>INVOICE</a></h1>
+      </header>
+
+      <!-- Tenant Sections -->
+      <section id="tenant-1" class="tenant-details active">
+        <div class="tenant-info">
+          <h3>Name: Tenant 01</h3>
+          <p>Property: Room 1B</p>
+        </div>
+
+        <form class="invoice-form">
+          <div>
+            <label for="month-1">Select Month</label>
+            <select id="month-1">
+              <option value="october">October 2024</option>
+            </select>
+          </div>
+          <div>
+            <label for="internet-fee-1">Internet Fee $</label>
+            <input type="number" id="internet-fee-1" placeholder="Enter internet fee">
+          </div>
+          <div>
+            <label for="electric-new-1">New Electric (kWh)</label>
+            <input type="number" id="electric-new-1" placeholder="Enter new electric reading">
+          </div>
+          <div>
+            <label>Previous Electric: <span id="electric-previous-1">2334</span> (kWh)</label>
+          </div>
+          <div>
+            <p>Electric 1 kWh: $0.375</p>
+            <p>Water (1 person): $1.50</p>
+            <p>1 $ = 4000 Riel</p>
+          </div>
+          <div>
+            <button type="button" onclick="calculateInvoice(1)">Calculate</button>
+          </div>
+          <div id="result-1" class="result-box">
+            <p>Room: $70.00</p>
+            <p id="electric-cost-1">Electric: $0.00</p>
+            <p id="internet-cost-1">Internet: $0.00</p>
+            <p>Water: $4.50</p>
+            <p id="total-cost-1">Total: $0.00</p>
+          </div>
+          <div>
+            <button type="button" onclick="showTotalInDollar(1)">Total $</button>
+            <button type="button" onclick="showTotalInRiel(1)">Total Riel</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="tenant-2" class="tenant-details">
+        <div class="tenant-info">
+          <h3>Name: Tenant 02</h3>
+          <p>Property: Room 2A</p>
+        </div>
+        <form class="invoice-form">
+          <div>
+            <label for="month-2">Select Month</label>
+            <select id="month-2">
+              <option value="october">October 2024</option>
+            </select>
+          </div>
+          <div>
+            <label for="internet-fee-2">Internet Fee $</label>
+            <input type="number" id="internet-fee-2" placeholder="Enter internet fee">
+          </div>
+          <div>
+            <label for="electric-new-2">New Electric (kWh)</label>
+            <input type="number" id="electric-new-2" placeholder="Enter new electric reading">
+          </div>
+          <div>
+            <label>Previous Electric: <span id="electric-previous-2">1450</span> (kWh)</label>
+          </div>
+          <div>
+            <p>Electric 1 kWh: $0.375</p>
+            <p>Water (1 person): $1.50</p>
+            <p>1 $ = 4000 Riel</p>
+          </div>
+          <div>
+            <button type="button" onclick="calculateInvoice(2)">Calculate</button>
+          </div>
+          <div id="result-2" class="result-box">
+            <p>Room: $70.00</p>
+            <p id="electric-cost-2">Electric: $0.00</p>
+            <p id="internet-cost-2">Internet: $0.00</p>
+            <p>Water: $4.50</p>
+            <p id="total-cost-2">Total: $0.00</p>
+          </div>
+          <div>
+            <button type="button" onclick="showTotalInDollar(2)">Total $</button>
+            <button type="button" onclick="showTotalInRiel(2)">Total Riel</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="tenant-3" class="tenant-details">
+        <div class="tenant-info">
+          <h3>Name: Tenant 03</h3>
+          <p>Property: Room 3C</p>
+        </div>
+        <form class="invoice-form">
+          <div>
+            <label for="month-3">Select Month</label>
+            <select id="month-3">
+              <option value="october">October 2024</option>
+            </select>
+          </div>
+          <div>
+            <label for="internet-fee-3">Internet Fee $</label>
+            <input type="number" id="internet-fee-3" placeholder="Enter internet fee">
+          </div>
+          <div>
+            <label for="electric-new-3">New Electric (kWh)</label>
+            <input type="number" id="electric-new-3" placeholder="Enter new electric reading">
+          </div>
+          <div>
+            <label>Previous Electric: <span id="electric-previous-3">1200</span> (kWh)</label>
+          </div>
+          <div>
+            <p>Electric 1 kWh: $0.375</p>
+            <p>Water (1 person): $1.50</p>
+            <p>1 $ = 4000 Riel</p>
+          </div>
+          <div>
+            <button type="button" onclick="calculateInvoice(3)">Calculate</button>
+          </div>
+          <div id="result-3" class="result-box">
+            <p>Room: $70.00</p>
+            <p id="electric-cost-3">Electric: $0.00</p>
+            <p id="internet-cost-3">Internet: $0.00</p>
+            <p>Water: $4.50</p>
+            <p id="total-cost-3">Total: $0.00</p>
+          </div>
+          <div>
+            <button type="button" onclick="showTotalInDollar(3)">Total $</button>
+            <button type="button" onclick="showTotalInRiel(3)">Total Riel</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- Link to the JavaScript file -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -5,6 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #f8f9fa;
+      border-bottom: 2px solid purple;
+    }
+    .dashboard-header .logo img {
+      height: 40px;
+    }
+    .dashboard-header .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .dashboard-header .user-info .avatar img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .dashboard-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin: 20px 0;
+      background-color: #e9f5ff;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid purple;
+    }
+
+    .tenant-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .tenant-card .tenant-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .tenant-card .tenant-info .avatar img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    .tenant-card .tenant-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .tenant-card button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .tenant-card button.update-btn {
+      background-color: #ffc107;
+      color: #fff;
+    }
+    .tenant-card button.invoice-btn {
+      background-color: #3f8efc;
+      color: #fff;
+    }
+    .tenant-card button.history-btn {
+      background-color: #6c757d;
+      color: #fff;
+    }
+    .tenant-card button:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
 <body>
   <div class="dashboard-container">
@@ -29,14 +112,16 @@
           <div class="avatar">
             <img src="img/Neat_1.JPG" alt="Tenant Avatar">
           </div>
-          <h3>Ny Meaneat</h3>
-          <p>Phone Number: +855 86 537 574</p>
-          <p><strong>Room 1</strong></p>
+          <div>
+            <h3>Ny Meaneat</h3>
+            <p>Phone: +855 86 537 574</p>
+            <p>Room 1</p>
+          </div>
         </div>
         <div class="tenant-actions">
-          <button class="btn update-btn">Update</button>
-          <button class="btn invoice-btn">Invoice</button>
-          <button class="btn history-btn">History</button>
+          <button class="update-btn">Update</button>
+          <button class="invoice-btn" onclick="window.location.href='invoice_page.html#tenant-1'">Invoice</button>
+          <button class="history-btn">History</button>
         </div>
       </div>
 
@@ -46,14 +131,16 @@
           <div class="avatar">
             <img src="img/sopheak_1.jpg" alt="Tenant Avatar">
           </div>
-          <h3>Ly Chansophak</h3>
-          <p>Phone Number: +855 17 668 509</p>
-          <p><strong>Room 2</strong></p>
+          <div>
+            <h3>Ly Chansophak</h3>
+            <p>Phone: +855 17 668 509</p>
+            <p>Room 2</p>
+          </div>
         </div>
         <div class="tenant-actions">
-          <button class="btn update-btn">Update</button>
-          <button class="btn invoice-btn">Invoice</button>
-          <button class="btn history-btn">History</button>
+          <button class="update-btn">Update</button>
+          <button class="invoice-btn" onclick="window.location.href='invoice_page.html#tenant-2'">Invoice</button>
+          <button class="history-btn">History</button>
         </div>
       </div>
 
@@ -63,14 +150,16 @@
           <div class="avatar">
             <img src="img/Pidor_1.jpg" alt="Tenant Avatar">
           </div>
-          <h3>Hong Pidor</h3>
-          <p>Phone Number: +855 70 737 702</p>
-          <p><strong>Room 3</strong></p>
+          <div>
+            <h3>Hong Pidor</h3>
+            <p>Phone: +855 70 737 702</p>
+            <p>Room 3</p>
+          </div>
         </div>
         <div class="tenant-actions">
-          <button class="btn update-btn">Update</button>
-          <button class="btn invoice-btn">Invoice</button>
-          <button class="btn history-btn">History</button>
+          <button class="update-btn">Update</button>
+          <button class="invoice-btn" onclick="window.location.href='invoice_page.html#tenant-3'">Invoice</button>
+          <button class="history-btn">History</button>
         </div>
       </div>
     </main>

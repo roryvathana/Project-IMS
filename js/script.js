@@ -139,3 +139,72 @@ document.addEventListener("DOMContentLoaded", () => {
   calculateElectricPrice();
   calculateWaterPrice();
 });
+function calculateInvoice(tenantId) {
+  const previousElectric = parseFloat(
+    document.getElementById(`electric-previous-${tenantId}`).innerText
+  );
+  const newElectric = parseFloat(
+    document.getElementById(`electric-new-${tenantId}`).value
+  );
+
+  if (isNaN(newElectric) || newElectric < previousElectric) {
+    alert("Please enter a valid electric reading.");
+    return;
+  }
+
+  const electricCost = (newElectric - previousElectric) * 0.375;
+  const waterCost = 1.5 * 3; // Water cost for 3 people
+  const roomCost = 70; // Fixed room cost
+  const totalCost = roomCost + electricCost + waterCost;
+
+  // Update the result box
+  document.getElementById(`electric-cost-${tenantId}`).innerText = `Electric: $${electricCost.toFixed(2)}`;
+  document.getElementById(`total-cost-${tenantId}`).innerText = `Total: $${totalCost.toFixed(2)}`;
+
+  document.getElementById(`result-${tenantId}`).classList.remove("hidden");
+}
+
+function showTotalInDollar(tenantId) {
+  // Assuming this simply shows the current dollar calculation
+  alert(`Total for Tenant ${tenantId} in $ is already displayed.`);
+}
+
+function showTotalInRiel(tenantId) {
+  const totalInDollar = parseFloat(
+    document.getElementById(`total-cost-${tenantId}`).innerText.replace("Total: $", "")
+  );
+  const totalInRiel = totalInDollar * 4000; // Conversion rate 1$ = 4000 Riel
+  alert(`Total for Tenant ${tenantId} in Riel is: ${totalInRiel.toFixed(2)}៛`);
+}
+
+function showTab(tabId, event) {
+  const tabs = document.querySelectorAll(".tenant-details");
+  tabs.forEach((tab) => tab.classList.remove("active"));
+
+  document.getElementById(tabId).classList.add("active");
+
+  const buttons = document.querySelectorAll(".tab");
+  buttons.forEach((button) => button.classList.remove("active"));
+
+  event.target.classList.add("active");
+}
+function toggleStatus(rowId) {
+  const button = document.querySelector(`#payment-date-${rowId}`).parentElement.querySelector('.status-button');
+  const paymentDate = document.getElementById(`payment-date-${rowId}`);
+
+  if (button.classList.contains('status-unpaid')) {
+    button.textContent = 'Paid';
+    button.classList.remove('status-unpaid');
+    button.classList.add('status-paid');
+    button.style.backgroundColor = 'green';
+    const now = new Date();
+    paymentDate.textContent = now.toLocaleDateString();
+  } else {
+    button.textContent = 'Unpaid';
+    button.classList.remove('status-paid');
+    button.classList.add('status-unpaid');
+    button.style.backgroundColor = 'red';
+    paymentDate.textContent = '-';
+  }
+}
+
