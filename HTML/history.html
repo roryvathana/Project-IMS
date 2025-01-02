@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMS Tenant History</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/style03.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo">I M S</a>
+    <nav class="navbar">
+        <a href="WelcomeIMS.html">home</a>
+        <a href="dashboard_option.html">Back</a>
+    </nav>
+</header>
+<section class="pricing" id="pricing">
+    <br><br><br><br><br>
+    <h1 class="heading"> <span>History</span> </h1>
+    <div class="box-container">
+        <div class="box">
+            <h3>Tenant-1</h3>
+            <img src="../img/Neat_1.JPG" alt="Tenant 1">
+            <div class="price"> <span>$</span>120<span>/mo</span> </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dec</td>
+                        <td id="payment-date-1">-</td>
+                        <td>$120</td>
+                        <td>
+                            <select class="form-select">
+                                <option>ABA</option>
+                                <option>Cash</option>
+                                <option>Other</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" onclick="toggleStatus(1)">Unpaid</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tenant 2 -->
+        <div class="box">
+            <h3>Tenant-2</h3>
+            <img src="../img/sopheak_1.jpg" alt="Tenant 2">
+            <div class="price"> <span>$</span>130<span>/mo</span> </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dec</td>
+                        <td id="payment-date-2">05-11-2024</td>
+                        <td>$130</td>
+                        <td>
+                            <select class="form-select">
+                                <option>ABA</option>
+                                <option>Cash</option>
+                                <option>Other</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-success" onclick="toggleStatus(2)">Paid</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tenant 3 -->
+        <div class="box">
+            <h3>Tenant-3</h3>
+            <img src="../img/Pidor_1.jpg" alt="Tenant 3">
+            <div class="price"> <span>$</span>150<span>/mo</span> </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dec</td>
+                        <td id="payment-date-3">-</td>
+                        <td>$150</td>
+                        <td>
+                            <select class="form-select">
+                                <option>ABA</option>
+                                <option>Cash</option>
+                                <option>Other</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" onclick="toggleStatus(3)">Unpaid</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="credit">Enjoy your day </div>
+</section>
+
+<script>
+    function toggleStatus(rowId) {
+        const button = document.querySelector(`button[onclick="toggleStatus(${rowId})"]`);
+        const paymentDateCell = document.getElementById(`payment-date-${rowId}`);
+
+        if (button.classList.contains('btn-danger')) {
+            button.textContent = 'Paid';
+            button.classList.remove('btn-danger');
+            button.classList.add('btn-success');
+            paymentDateCell.textContent = new Date().toISOString().split('T')[0];
+        } else {
+            button.textContent = 'Unpaid';
+            button.classList.remove('btn-success');
+            button.classList.add('btn-danger');
+            paymentDateCell.textContent = '-';
+        }
+    }
+</script>
+</body>
+</html>
