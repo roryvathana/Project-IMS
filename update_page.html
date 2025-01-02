@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMS Tenant Update</title>
+  <link rel="stylesheet" href="csss/bootstrap.min.css">
+</head>
+<body>
+  <div class="d-flex vh-100">
+    <!-- Sidebar -->
+    <aside class="bg-light border-end p-3" style="width: 200px;">
+      <div class="text-center mb-4">
+        <img src="img/IMS_logo_1.png" alt="IMS Logo" class="img-fluid" style="max-height: 100px;">
+      </div>
+      <div class="nav flex-column">
+        <button class="btn btn-primary mb-2" onclick="showTenant('tenant-1')">Tenant 01</button>
+        <button class="btn btn-outline-primary mb-2" onclick="showTenant('tenant-2')">Tenant 02</button>
+        <button class="btn btn-outline-primary" onclick="showTenant('tenant-3')">Tenant 03</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="container-fluid p-4">
+      <header class="mb-4">
+        <h1 class="text-center">Update Tenant Information</h1>
+      </header>
+
+      <!-- Tenant Sections -->
+      <section id="tenant-1" class="tenant-section">
+        <div class="card mb-4">
+          <div class="card-header d-flex align-items-center">
+            <img src="img/tenant1.jpg" alt="Tenant Avatar" class="rounded-circle me-3" style="width: 50px; height: 50px;">
+            <h3 class="mb-0">Name: Ny Meaneat</h3>
+          </div>
+          <div class="card-body">
+            <p>Room Price: $70</p>
+            <p>Number of Tenants: 3 people</p>
+            <p>Electricity (1 kWh): $0.375</p>
+            <p>Water (1 person): $1.50</p>
+            <p>Exchange Rate: 1 $ = 4000 Riel</p>
+            <button class="btn btn-primary" onclick="openModal('Ny Meaneat', 70, 3, 0.375, 1.50, 4000)">Edit</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="tenant-2" class="tenant-section d-none">
+        <div class="card mb-4">
+          <div class="card-header d-flex align-items-center">
+            <img src="img/tenant2.jpg" alt="Tenant Avatar" class="rounded-circle me-3" style="width: 50px; height: 50px;">
+            <h3 class="mb-0">Name: Tenant 02</h3>
+          </div>
+          <div class="card-body">
+            <p>Room Price: $80</p>
+            <p>Number of Tenants: 2 people</p>
+            <p>Electricity (1 kWh): $0.4</p>
+            <p>Water (1 person): $1.75</p>
+            <p>Exchange Rate: 1 $ = 4000 Riel</p>
+            <button class="btn btn-primary" onclick="openModal('Tenant 02', 80, 2, 0.4, 1.75, 4000)">Edit</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="tenant-3" class="tenant-section d-none">
+        <div class="card mb-4">
+          <div class="card-header d-flex align-items-center">
+            <img src="img/tenant3.jpg" alt="Tenant Avatar" class="rounded-circle me-3" style="width: 50px; height: 50px;">
+            <h3 class="mb-0">Name: Tenant 03</h3>
+          </div>
+          <div class="card-body">
+            <p>Room Price: $100</p>
+            <p>Number of Tenants: 1 person</p>
+            <p>Electricity (1 kWh): $0.5</p>
+            <p>Water (1 person): $2.00</p>
+            <p>Exchange Rate: 1 $ = 4000 Riel</p>
+            <button class="btn btn-primary" onclick="openModal('Tenant 03', 100, 1, 0.5, 2.00, 4000)">Edit</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="tenantForm">
+            <div class="mb-3">
+              <label for="tenantName" class="form-label">Tenant Name</label>
+              <input type="text" id="tenantName" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="roomPrice" class="form-label">Room Price</label>
+              <input type="number" id="roomPrice" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="numTenants" class="form-label">Number of Tenants</label>
+              <input type="number" id="numTenants" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="electricRate" class="form-label">Electricity Rate</label>
+              <input type="number" id="electricRate" class="form-control" step="0.001">
+            </div>
+            <div class="mb-3">
+              <label for="waterRate" class="form-label">Water Rate</label>
+              <input type="number" id="waterRate" class="form-control" step="0.01">
+            </div>
+            <div class="mb-3">
+              <label for="exchangeRate" class="form-label">Exchange Rate</label>
+              <input type="number" id="exchangeRate" class="form-control">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="saveChanges()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invoice Management System Login</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="js/script.js"></script>
+  <title>Login</title>
+  <link rel="stylesheet" href="csss/bootstrap.min.css">
 </head>
-<body>
-  <div class="login-container">
-    <div class="login-box">
-      <img src="img/IMS_logo_1.png" alt="IMS Logo" class="logo">
-      <h1>Welcome to</h1>
-      <h2>Invoice Management System</h2>
-      <p>Please Login to your account.</p>
-      <form onsubmit="return validateLogin()">
-        <div class="input-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Enter your name">
+<body class="d-flex align-items-center justify-content-center vh-100">
+  <div class="card shadow-lg" style="width: 400px;">
+    <div class="card-header text-center bg-primary text-white">
+      <h3>Login to IMS</h3>
+    </div>
+    <div class="card-body">
+      <form action="/login" method="POST">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
         </div>
-        <div class="input-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password">
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
         </div>
-        <button type="submit" class="login-button">Login</button>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
       </form>
-      <p id="message" style="color: red; font-size: 14px; margin-top: 10px;"></p>
+    </div>
+    <div class="card-footer text-center">
+      <small>Don't have an account? <a href="/register">Sign up</a></small>
     </div>
   </div>
+
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

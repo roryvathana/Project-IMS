@@ -4,165 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .dashboard-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #f8f9fa;
-      border-bottom: 2px solid purple;
-    }
-    .dashboard-header .logo img {
-      height: 40px;
-    }
-    .dashboard-header .user-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .dashboard-header .user-info .avatar img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-    }
-
-    .dashboard-title {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-      margin: 20px 0;
-      background-color: #e9f5ff;
-      padding: 10px;
-      border-radius: 5px;
-      border: 2px solid purple;
-    }
-
-    .tenant-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 15px;
-      margin-bottom: 15px;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .tenant-card .tenant-info {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    .tenant-card .tenant-info .avatar img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-    }
-    .tenant-card .tenant-actions {
-      display: flex;
-      gap: 10px;
-    }
-    .tenant-card button {
-      padding: 8px 12px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .tenant-card button.update-btn {
-      background-color: #ffc107;
-      color: #fff;
-    }
-    .tenant-card button.invoice-btn {
-      background-color: #3f8efc;
-      color: #fff;
-    }
-    .tenant-card button.history-btn {
-      background-color: #6c757d;
-      color: #fff;
-    }
-    .tenant-card button:hover {
-      opacity: 0.9;
-    }
-  </style>
+  <link rel="stylesheet" href="csss/bootstrap.min.css">
 </head>
 <body>
-  <div class="dashboard-container">
-    <header class="dashboard-header">
-      <div class="logo">
-        <img src="img/IMS_logo_1.png" alt="IMS Logo">
+  <div class="container-fluid vh-100 d-flex flex-column">
+    <!-- Header -->
+    <header class="bg-light border-bottom p-3 d-flex justify-content-between align-items-center">
+      <div>
+        <img src="img/IMS_logo_1.png" alt="IMS Logo" class="img-fluid" style="max-height: 50px;">
       </div>
-      <div class="user-info">
-        <span>Vathana</span>
-        <div class="avatar">
-          <img src="img/vathana_1.jpg" alt="User Avatar">
-        </div>
-      </div>         
+      <div class="d-flex align-items-center">
+        <span class="me-3">Vathana</span>
+        <img src="img/vathana_1.jpg" alt="User Avatar" class="rounded-circle" style="width: 40px; height: 40px;">
+      </div>
     </header>
 
-    <main class="dashboard-main">
-      <div class="dashboard-title">DASHBOARD</div>
+    <!-- Main Content -->
+    <main class="container mt-4">
+      <h1 class="text-center mb-4">Dashboard</h1>
 
-      <!-- Tenant 1 -->
-      <div class="tenant-card">
-        <div class="tenant-info">
-          <div class="avatar">
-            <img src="img/Neat_1.JPG" alt="Tenant Avatar">
-          </div>
-          <div>
-            <h3>Ny Meaneat</h3>
-            <p>Phone: +855 86 537 574</p>
-            <p>Room 1</p>
+      <!-- Tenant Cards -->
+      <div class="row g-3">
+        <!-- Tenant 1 -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body d-flex align-items-center">
+              <img src="img/Neat_1.JPG" alt="Tenant Avatar" class="rounded-circle me-3" style="width: 50px; height: 50px;">
+              <div>
+                <h5 class="card-title">Ny Meaneat</h5>
+                <p class="mb-1">Phone: +855 86 537 574</p>
+                <p>Room: 1</p>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <button class="btn btn-warning">Update</button>
+              <button class="btn btn-primary" onclick="window.location.href='invoice_page.html#tenant-1'">Invoice</button>
+              <button class="btn btn-secondary">History</button>
+            </div>
           </div>
         </div>
-        <div class="tenant-actions">
-          <button class="update-btn">Update</button>
-          <button class="invoice-btn" onclick="window.location.href='invoice_page.html#tenant-1'">Invoice</button>
-          <button class="history-btn">History</button>
-        </div>
-      </div>
 
-      <!-- Tenant 2 -->
-      <div class="tenant-card">
-        <div class="tenant-info">
-          <div class="avatar">
-            <img src="img/sopheak_1.jpg" alt="Tenant Avatar">
-          </div>
-          <div>
-            <h3>Ly Chansophak</h3>
-            <p>Phone: +855 17 668 509</p>
-            <p>Room 2</p>
+        <!-- Tenant 2 -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body d-flex align-items-center">
+              <img src="img/sopheak_1.jpg" alt="Tenant Avatar" class="rounded-circle me-3" style="width: 50px; height: 50px;">
+              <div>
+                <h5 class="card-title">Ly Chansophak</h5>
+                <p class="mb-1">Phone: +855 17 668 509</p>
+                <p>Room: 2</p>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <button class="btn btn-warning">Update</button>
+              <button class="btn btn-primary" onclick="window.location.href='invoice_page.html#tenant-2'">Invoice</button>
+              <button class="btn btn-secondary">History</button>
+            </div>
           </div>
         </div>
-        <div class="tenant-actions">
-          <button class="update-btn">Update</button>
-          <button class="invoice-btn" onclick="window.location.href='invoice_page.html#tenant-2'">Invoice</button>
-          <button class="history-btn">History</button>
-        </div>
-      </div>
 
-      <!-- Tenant 3 -->
-      <div class="tenant-card">
-        <div class="tenant-info">
-          <div class="avatar">
-            <img src="img/Pidor_1.jpg" alt="Tenant Avatar">
+        <!-- Tenant 3 -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body d-flex align-items-center">
+              <img src="img/Pidor_1.jpg" alt="Tenant Avatar" class="rounded-circle me-3" style="width: 50px; height: 50px;">
+              <div>
+                <h5 class="card-title">Hong Pidor</h5>
+                <p class="mb-1">Phone: +855 70 737 702</p>
+                <p>Room: 3</p>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <button class="btn btn-warning">Update</button>
+              <button class="btn btn-primary" onclick="window.location.href='invoice_page.html#tenant-3'">Invoice</button>
+              <button class="btn btn-secondary">History</button>
+            </div>
           </div>
-          <div>
-            <h3>Hong Pidor</h3>
-            <p>Phone: +855 70 737 702</p>
-            <p>Room 3</p>
-          </div>
-        </div>
-        <div class="tenant-actions">
-          <button class="update-btn">Update</button>
-          <button class="invoice-btn" onclick="window.location.href='invoice_page.html#tenant-3'">Invoice</button>
-          <button class="history-btn">History</button>
         </div>
       </div>
     </main>
   </div>
+
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

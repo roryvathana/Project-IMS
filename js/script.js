@@ -208,3 +208,69 @@ function toggleStatus(rowId) {
   }
 }
 
+function openModal(name, price, tenants, electricRate, waterRate, exchangeRate) {
+  document.getElementById('editModalLabel').textContent = `Edit Information for: ${name}`;
+  document.getElementById('tenantName').value = name;
+  document.getElementById('roomPrice').value = price;
+  document.getElementById('numTenants').value = tenants;
+  document.getElementById('electricRate').value = electricRate;
+  document.getElementById('waterRate').value = waterRate;
+  document.getElementById('exchangeRate').value = exchangeRate;
+
+  // Show the modal
+  const modal = new bootstrap.Modal(document.getElementById('editModal'));
+  modal.show();
+}
+function closeModal() {
+  document.getElementById('editModal').style.display = 'none';
+}
+
+function saveChanges() {
+  const name = document.getElementById('tenantName').value;
+  const price = document.getElementById('roomPrice').value;
+  const tenants = document.getElementById('numTenants').value;
+  const electric = document.getElementById('electricRate').value;
+  const water = document.getElementById('waterRate').value;
+  const exchange = document.getElementById('exchangeRate').value;
+
+  alert(`Saved: \nName: ${name}\nRoom Price: $${price}\nTenants: ${tenants} people\nElectric: $${electric}\nWater: $${water}\nExchange Rate: 1 $ = ${exchange} Riel`);
+
+  closeModal();
+}
+
+function showTenant(tenantId) {
+  // Hide all tenant sections
+  document.querySelectorAll('.tenant-section').forEach(section => {
+    section.classList.add('d-none');
+  });
+
+  // Show the selected tenant section
+  document.getElementById(tenantId).classList.remove('d-none');
+
+  // Update the active button
+  document.querySelectorAll('.btn').forEach(button => {
+    button.classList.remove('btn-primary');
+    button.classList.add('btn-outline-primary');
+  });
+  document.querySelector(`[onclick="showTenant('${tenantId}')"]`).classList.remove('btn-outline-primary');
+  document.querySelector(`[onclick="showTenant('${tenantId}')"]`).classList.add('btn-primary');
+}
+
+// Default to show the first tenant
+document.addEventListener('DOMContentLoaded', () => {
+  showTenant('tenant-1');
+});
+function saveChanges() {
+  const name = document.getElementById('tenantName').value;
+  const price = document.getElementById('roomPrice').value;
+  const tenants = document.getElementById('numTenants').value;
+  const electricRate = document.getElementById('electricRate').value;
+  const waterRate = document.getElementById('waterRate').value;
+  const exchangeRate = document.getElementById('exchangeRate').value;
+
+  console.log(`Saved Data: Name=${name}, Price=${price}, Tenants=${tenants}, Electric=${electricRate}, Water=${waterRate}, Exchange=${exchangeRate}`);
+  
+  // Close the modal
+  const modal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+  modal.hide();
+}
